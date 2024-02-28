@@ -28,9 +28,9 @@ app = Flask(__name__,
 def index():
     return render_template('index.html')
 
-@app.route('/test')
-def test():
-    return jsonify({"success":True, "version": "K8S.1.11"})
+# @app.route('/test')
+# def test():
+#     return jsonify({"success":True, "version": "K8S.1.11"})
 
 
 @app.route("/logout", methods=["GET"])

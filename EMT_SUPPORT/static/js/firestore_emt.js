@@ -153,16 +153,26 @@ $(document).ready(function() {
         var is_page_loaded = false;
         var pageSize=200;
         // Initialize Firebase
-        firebase.initializeApp({
-              apiKey: "AIzaSyA_p90pHTKGwqNvDHF91Rm2rqeLgErfeog",
-              authDomain: "emt-bot.firebaseapp.com",
-              databaseURL: "https://emt-bot.firebaseio.com",
-              projectId: "emt-bot",
-              storageBucket: "emt-bot.appspot.com",
-              messagingSenderId: "395962900929",
-              appId: "1:395962900929:web:352ab8e4c6805f87ec8f40",
-              measurementId: "G-L7HN5W2Z9E"
-        });
+//        firebase.initializeApp({
+//              apiKey: "AIzaSyA_p90pHTKGwqNvDHF91Rm2rqeLgErfeog",
+//              authDomain: "emt-bot.firebaseapp.com",
+//              databaseURL: "https://emt-bot.firebaseio.com",
+//              projectId: "emt-bot",
+//              storageBucket: "emt-bot.appspot.com",
+//              messagingSenderId: "395962900929",
+//              appId: "1:395962900929:web:352ab8e4c6805f87ec8f40",
+//              measurementId: "G-L7HN5W2Z9E"
+//        });
+         firebase.initializeApp({
+                 apiKey: "AIzaSyBBrpsMGakktiMWh62YVTbmDvfkbAKnets",
+                 authDomain: "tsitestchatsol.firebaseapp.com",
+                 databaseURL: "https://tsitestchatsol-default-rtdb.asia-southeast1.firebasedatabase.app",
+                 projectId: "tsitestchatsol",
+                 storageBucket: "tsitestchatsol.appspot.com",
+                 messagingSenderId: "722705539284",
+                 appId: "1:722705539284:web:b408b8aae7885ab5e0db41",
+                 measurementId: "G-Z935JF612Z"
+               });
         var supported_file_extension = ["jpg", "jpeg", "png", "pdf"]
         var db = firebase.firestore();
         var lastVisibleUnAssigDoc={};
