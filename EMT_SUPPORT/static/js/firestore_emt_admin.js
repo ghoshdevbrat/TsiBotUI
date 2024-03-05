@@ -223,16 +223,24 @@
         var is_page_loaded = false;
         var pageSize=200;
         // Initialize Firebase
-         firebase.initializeApp({
-              apiKey: "AIzaSyBBrpsMGakktiMWh62YVTbmDvfkbAKnets",
-              authDomain: "tsitestchatsol.firebaseapp.com",
-              databaseURL: "https://tsitestchatsol-default-rtdb.asia-southeast1.firebasedatabase.app",
-              projectId: "tsitestchatsol",
-              storageBucket: "tsitestchatsol.appspot.com",
-              messagingSenderId: "722705539284",
-              appId: "1:722705539284:web:b408b8aae7885ab5e0db41",
-              measurementId: "G-Z935JF612Z"
-        });
+        var firebaseApp =
+                firebase.initializeApp({
+                                  apiKey: "AIzaSyBBrpsMGakktiMWh62YVTbmDvfkbAKnets",
+                                  authDomain: "tsitestchatsol.firebaseapp.com",
+                                  databaseURL: "https://tsitestchatsol-default-rtdb.asia-southeast1.firebasedatabase.app",
+                                  projectId: "tsitestchatsol",
+                                  storageBucket: "tsitestchatsol.appspot.com",
+                                  messagingSenderId: "722705539284",
+                                  appId: "1:722705539284:web:b408b8aae7885ab5e0db41",
+                                  measurementId: "G-Z935JF612Z"
+                                  });
+                if (firebaseApp) {
+                   // alert('Firebase initialization successful')
+                    //console.log("Firebase initialization successful!");
+                } else {
+                   // console.error("Firebase initialization failed.");
+                   // alert("Firebase initialization failed."));
+                }
         /*
         firebase.initializeApp({
               apiKey: "AIzaSyA_p90pHTKGwqNvDHF91Rm2rqeLgErfeog",
@@ -727,7 +735,11 @@
 //                             notifyMe("New Un Assign Query");
                         }
                          $("#un-assign-"+ user_support_id).click(function(e){
-                            $("#marked-message-"+user_support_id).find("div.chat-body").find("div").last()[0].scrollIntoView()
+                          var hasData = $("#marked-message-"+user_support_id).find("div.chat-body").find("div").last()[0];
+                          if(hasData != undefined)
+                          {
+                            $("#marked-message-"+user_support_id).find("div.chat-body").find("div").last()[0].scrollIntoView();
+                          }
                           });
                     }
                     if (change.type === "modified") {
@@ -780,7 +792,8 @@
             var src = "";
             console.log(attachment_type, msg);
             if (attachment_type == 7){
-                if (msg.includes("https://api.infobip.com/")){
+               // if (msg.includes("https://api.infobip.com/")){
+                if (msg.includes("https://8gkgxr.api.infobip.com/")){
                     let url = new URL(msg);
                     let params = new URLSearchParams(url.search);
                     let auth_token = "Basic " + params.get("authorization");
@@ -1431,8 +1444,8 @@
          });
          $( "#ddl_departments" ).change(function(e) {
                                  // alert( $('option:selected', this).text());
-           // bindDepartmentUsers($('option:selected', this).val(),result.data.login_support_id);  //original
-           bindDepartmentUsers($('option:selected', this).val(),result.data.login_user_detail.login_support_id);
+            //bindDepartmentUsers($('option:selected', this).val(),result.data.login_support_id);  //original
+            bindDepartmentUsers($('option:selected', this).val(),result.data.login_user_detail.login_support_id);
 
           });
           $('#ddl_departments').select2({ width:"200px"});
@@ -2057,7 +2070,11 @@
 //
 
                          $("#un-assign-"+ user_support_id).click(function(e){
-                            $("#marked-message-"+user_support_id).find("div.chat-body").find("div").last()[0].scrollIntoView()
+                         var hasData =  $("#marked-message-"+user_support_id).find("div.chat-body").find("div").last()[0];
+                         if(hasData != undefined)
+                         {
+                            $("#marked-message-"+user_support_id).find("div.chat-body").find("div").last()[0].scrollIntoView();
+                            }
                           });
 
 

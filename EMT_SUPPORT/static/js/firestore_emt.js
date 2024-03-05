@@ -834,7 +834,11 @@ $(document).ready(function() {
 //                             notifyMe("New Un Assign Query");
                         }
                          $("#un-assign-"+ user_support_id).click(function(e){
-                            $("#marked-message-"+user_support_id).find("div.chat-body").find("div").last()[0].scrollIntoView()
+                         var test = $("#marked-message-"+user_support_id).find("div.chat-body").find("div").last()[0];
+                         if(test!= null)
+                         {
+                            $("#marked-message-"+user_support_id).find("div.chat-body").find("div").last()[0].scrollIntoView();
+                            }
                           });
                     }
                     if (change.type === "modified") {
@@ -1293,6 +1297,8 @@ $(document).ready(function() {
                     render_close_chat_content(user_support_id, name, result);
 
                      $("#close-assign-"+ user_support_id).click(function(e){
+                       if( $("#sent-message-"+user_support_id).find("div.chat-body").find("div").last()[0] != null &&
+                      $("#sent-message-"+user_support_id).find("div.chat-body").find("div").last()[0] != undefined  )
                             $("#sent-message-"+user_support_id).find("div.chat-body").find("div").last()[0].scrollIntoView();
                       });
                 }
