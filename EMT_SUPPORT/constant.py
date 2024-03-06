@@ -89,7 +89,7 @@ DISPLAY_DEPARTMENT_NAME = {
 # production url live
 mongo_username = 'adminUser'
 mongo_password = 'P@ssw0rd'
-mongoURI = f'mongodb://{urllib.parse.quote(mongo_username)}:{urllib.parse.quote(mongo_password)}@localhost:27017/?authMechanism=DEFAULT&authSource=admin'
+mongoURI = f'mongodb://{urllib.parse.quote(mongo_username)}:{urllib.parse.quote(mongo_password)}@172.16.0.151:27017/?authMechanism=DEFAULT&authSource=admin'
 client = MongoClient(mongoURI, ssl_cert_reqs=ssl.CERT_NONE)
 # client = {"emt_bot": {}}
 mongo_read = client['m_bot']
